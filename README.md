@@ -10,6 +10,16 @@ Check the strength of one or more passwords.
 Provides information about whether a password has been compromised.
 Suggests changing passwords that have been found in data breaches.
 
+## Screenshots
+![image](https://github.com/yamini-31/Password-Strength-Analyzer/assets/104098671/0ba145c0-6f5c-4a65-b3de-3c8d1747de45)
+![image](https://github.com/yamini-31/Password-Strength-Analyzer/assets/104098671/30dee081-0698-4264-a609-6ef89d32604d)
+![image](https://github.com/yamini-31/Password-Strength-Analyzer/assets/104098671/63a64d0e-f071-4e5f-b3a4-8610a17bb5fe)
+![image](https://github.com/yamini-31/Password-Strength-Analyzer/assets/104098671/5bf2c803-0ccf-4bf1-b2f2-335a7b768eea)
+![image](https://github.com/yamini-31/Password-Strength-Analyzer/assets/104098671/ae75b23f-fa62-4858-93bb-651d13a272d5)
+![image](https://github.com/yamini-31/Password-Strength-Analyzer/assets/104098671/ac0dde0f-92d1-48b2-a9cd-53e73f33979e)
+![image](https://github.com/yamini-31/Password-Strength-Analyzer/assets/104098671/4f54d3d6-b295-4500-aa56-f5453b94df9c)
+
+
 ## Running the Code
 
 You have two options to run this code:
