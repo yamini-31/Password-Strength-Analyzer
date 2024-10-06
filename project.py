@@ -1,5 +1,8 @@
 import requests
 import hashlib
+import tkinter as tk
+from tkinter import ttk
+from tkinter import messagebox
 
 def request_api_data(query_char):
     url = 'https://api.pwnedpasswords.com/range/' + query_char
@@ -21,19 +24,42 @@ def pwned_api_check(password):
     response = request_api_data(first5_char)
     return get_password_leaks_count(response, tail)
 
-def main():
-    while True:
-        password = input("Enter a password to check (or 'exit' to quit): ")
-        
-        if password.lower() == 'exit':
-            break
-        
+def check_password():
+    password = entry.get()
+    if not password:
+        messagebox.showerror("Input Error", "Please enter a password.")
+        return
+    
+    try:
         count = pwned_api_check(password)
         if count:
-            print(f'{password} was found {count} times... you should probably change your password!')
+            messagebox.showwarning("Password Compromised", f'{password} was found {count} times! You should probably change it.')
         else:
-            print(f'{password} was NOT found. Carry on!')
+            messagebox.showinfo("Password Safe", f'{password} was NOT found. Carry on!')
+    except Exception as e:
+        messagebox.showerror("Error", f"An error occurred: {e}")
 
-if __name__ == '__main__':
-    main()
+# Create the main application window
+root = tk.Tk()
+root.title("Password Checker")
+root.geometry("350x200")  # Set window size
+
+# Set style for modern look
+style = ttk.Style()
+style.theme_use('clam')
+
+# Create and place the label and entry for the password
+label = ttk.Label(root, text="Enter Password:", font=("Helvetica", 12))
+label.pack(pady=20)
+
+entry = ttk.Entry(root, show="*", font=("Helvetica", 12), width=25)
+entry.pack(pady=10)
+
+# Create and place the "Check Password" button
+button = ttk.Button(root, text="Check Password", command=check_password)
+button.pack(pady=20)
+
+# Run the application
+root.mainloop()
+
 
